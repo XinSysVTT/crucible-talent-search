@@ -1,0 +1,43 @@
+{
+  "id": "crucible-talent-search",
+  "title": "Crucible Talent Search",
+  "description": "Adds a searchable talent browser panel to the Crucible talent tree, allowing players to filter talents by name, ability score, and tier, then navigate directly to any talent's node on the canvas.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "XinSysVtt"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14.361",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "crucible",
+        "type": "system",
+        "compatibility": {
+          "minimum": "0.9.4"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "crucible-talent-search.mjs"
+  ],
+  "styles": [
+    "styles/talent-search.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "",
+  "manifest": "",
+  "download": ""
+}

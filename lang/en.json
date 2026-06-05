@@ -1,0 +1,14 @@
+{
+  "TALENT_SEARCH.ButtonLabel": "Search",
+  "TALENT_SEARCH.PanelLabel": "Talent Browser",
+  "TALENT_SEARCH.Placeholder": "Search talents…",
+  "TALENT_SEARCH.AllAbilities": "All Abilities",
+  "TALENT_SEARCH.FilterAbility": "Filter by ability",
+  "TALENT_SEARCH.AllTiers": "All Tiers",
+  "TALENT_SEARCH.TierN": "Tier {n}",
+  "TALENT_SEARCH.FilterTier": "Filter by tier",
+  "TALENT_SEARCH.Talents": "talents",
+  "TALENT_SEARCH.Owned": "Owned",
+  "TALENT_SEARCH.NavigateTo": "Navigate to",
+  "TALENT_SEARCH.NoResults": "No talents found"
+}

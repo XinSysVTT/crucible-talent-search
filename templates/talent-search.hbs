@@ -1,0 +1,83 @@
+<div id="crucible-talent-search" class="crucible" role="search" aria-label="{{localize 'TALENT_SEARCH.PanelLabel'}}">
+  <div class="search-panel">
+
+    <div class="search-header">
+      <h2><i class="fa-solid fa-scroll" inert></i> {{localize "TALENT_SEARCH.PanelLabel"}}</h2>
+      <button type="button" class="close-btn" data-action="closeSearch" aria-label="{{localize 'Close'}}">
+        <i class="fa-solid fa-times" inert></i>
+      </button>
+    </div>
+
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true" inert></i>
+      <input type="search"
+             class="talent-search-input"
+             placeholder="{{localize 'TALENT_SEARCH.Placeholder'}}"
+             autocomplete="off"
+             spellcheck="false"
+             value="{{query}}" />
+    </div>
+
+    <div class="search-filters">
+      <select class="talent-filter-ability" aria-label="{{localize 'TALENT_SEARCH.FilterAbility'}}">
+        <option value="">{{localize "TALENT_SEARCH.AllAbilities"}}</option>
+        {{#each abilities}}
+          <option value="{{this.id}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+      </select>
+      <select class="talent-filter-tier" aria-label="{{localize 'TALENT_SEARCH.FilterTier'}}">
+        {{#each tierOptions}}
+          <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="search-count" aria-live="polite">
+      {{#if allShown}}
+        {{totalCount}} {{localize "TALENT_SEARCH.Talents"}}
+      {{else}}
+        {{filteredCount}} / {{totalCount}}
+      {{/if}}
+    </div>
+
+    <ol class="search-results" role="list">
+      {{#each talents}}
+      <li class="talent-search-entry {{this.cssClass}}"
+          data-talent-id="{{this.id}}"
+          data-uuid="{{this.uuid}}"
+          data-node-id="{{this.nodeId}}"
+          role="listitem">
+
+        <div class="entry-icon">
+          <img src="{{this.img}}" alt="{{this.name}}" loading="lazy" />
+          {{#if this.owned}}
+            <i class="fa-solid fa-check owned-badge" aria-label="{{localize 'TALENT_SEARCH.Owned'}}" inert></i>
+          {{/if}}
+        </div>
+
+        <div class="entry-details">
+          <div class="entry-name">{{this.name}}</div>
+          <div class="entry-meta">
+            <span class="entry-tier">T{{this.tier}}</span>
+            {{#if this.nodeType}}<span class="entry-type">{{this.nodeType}}</span>{{/if}}
+          </div>
+        </div>
+
+        <button type="button"
+                class="entry-locate"
+                data-action="navigateToTalent"
+                aria-label="{{localize 'TALENT_SEARCH.NavigateTo'}} {{this.name}}">
+          <i class="fa-solid fa-crosshairs" inert></i>
+        </button>
+
+      </li>
+      {{else}}
+      <li class="search-empty" role="listitem">
+        <i class="fa-solid fa-scroll" aria-hidden="true" inert></i>
+        <p>{{localize "TALENT_SEARCH.NoResults"}}</p>
+      </li>
+      {{/each}}
+    </ol>
+
+  </div>
+</div>
