@@ -2,7 +2,7 @@
   "id": "crucible-talent-search",
   "title": "Crucible Talent Search",
   "description": "Adds a searchable talent browser panel to the Crucible talent tree, allowing players to filter talents by name, ability score, and tier, then navigate directly to any talent's node on the canvas.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "XinSysVtt"
@@ -10,8 +10,7 @@
   ],
   "compatibility": {
     "minimum": "14.361",
-    "verified": "14",
-    "maximum": "14"
+    "verified": "14.361"
   },
   "relationships": {
     "systems": [
@@ -37,7 +36,7 @@
       "path": "lang/en.json"
     }
   ],
-  "url": "",
+  "url": "https://github.com/XinSysVTT/crucible-talent-search",
   "manifest": "https://github.com/XinSysVTT/crucible-talent-search/releases/latest/download/module.json",
-  "download": "https://github.com/XinSysVTT/crucible-talent-search/releases/download/1.0.0/module.zip"
+  "download": "https://github.com/XinSysVTT/crucible-talent-search/releases/download/1.0.0/module.zip",
 }
