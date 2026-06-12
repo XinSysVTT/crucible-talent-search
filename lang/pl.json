@@ -1,0 +1,14 @@
+{
+  "TALENT_SEARCH.ButtonLabel": "Wyszukaj",
+  "TALENT_SEARCH.PanelLabel": "Przeglądanie talentów",
+  "TALENT_SEARCH.Placeholder": "Wyszukaj talent...",
+  "TALENT_SEARCH.AllAbilities": "Wszystkie atrybuty",
+  "TALENT_SEARCH.FilterAbility": "Filtruj po atrybutach",
+  "TALENT_SEARCH.AllTiers": "Wszystkie stopnie",
+  "TALENT_SEARCH.TierN": "Stopień {n}",
+  "TALENT_SEARCH.FilterTier": "Filtruj po stopniu",
+  "TALENT_SEARCH.Talents": "talenty",
+  "TALENT_SEARCH.Owned": "Posiadane",
+  "TALENT_SEARCH.NavigateTo": "Nawiguj do",
+  "TALENT_SEARCH.NoResults": "Nie znaleziono żadnych talentów"
+}
