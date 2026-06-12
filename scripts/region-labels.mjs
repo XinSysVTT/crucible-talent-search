@@ -52,8 +52,8 @@ let _container = null;
 export function registerRegionLabelSettings() {
 
   game.settings.register("crucible-talent-search", "showRegionLabels", {
-    name: "TALENT_SEARCH.Settings.RegionLabels",
-    hint: "TALENT_SEARCH.Settings.RegionLabelsHint",
+    name: "Region Labels",
+    hint: "The six ability sextants in the talent tree will be labeled with large, semi-transparent text showing the name of each region.  This is intended as a visual aid to help orient yourself when navigating the tree, and is not meant to be decorative.  If you find it distracting, you can disable it here.",
     scope: "client",
     config: true,
     type: Boolean,
@@ -64,8 +64,8 @@ export function registerRegionLabelSettings() {
   });
 
   game.settings.register("crucible-talent-search", "regionLabelsOpacity", {
-    name: "TALENT_SEARCH.Settings.RegionLabelsOpacity",
-    hint: "TALENT_SEARCH.Settings.RegionLabelsOpacityHint",
+    name: "Region Labels Opacity",
+    hint: "The opacity of the region labels in the talent tree.",
     scope: "client",
     config: true,
     type: Number,
@@ -83,8 +83,8 @@ export function registerRegionLabelSettings() {
   });
 
   game.settings.register("crucible-talent-search", "regionLabelsSize", {
-    name: "TALENT_SEARCH.Settings.RegionLabelsSize",
-    hint: "TALENT_SEARCH.Settings.RegionLabelsSizeHint",
+    name: "Region Labels Size",
+    hint: "The size of the region labels in the talent tree.",
     scope: "client",
     config: true,
     type: Number,
@@ -101,12 +101,12 @@ export function registerRegionLabelSettings() {
   });
 
   game.settings.register("crucible-talent-search", "regionLabelsRadius", {
-    name: "TALENT_SEARCH.Settings.RegionLabelsRadius",
-    hint: "TALENT_SEARCH.Settings.RegionLabelsRadiusHint",
+    name: "Region Labels Radius",
+    hint: "The radial distance from the centre of the talent tree for the region labels.",
     scope: "client",
     config: true,
     type: Number,
-    range: { min: 0, max: 1260, step: 10 },
+    range: { min: 0, max: 1500, step: 10 },
     default: 900,
     onChange: radius => {
       if ( !_container?.parent ) return;
