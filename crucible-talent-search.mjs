@@ -1,4 +1,5 @@
 import CrucibleTalentSearch from "./scripts/talent-search.mjs";
+import { registerRegionLabelSettings, injectRegionLabels } from "./scripts/region-labels.mjs";
 
 /**
  * @module crucible-talent-search
@@ -160,30 +161,68 @@ function wireControlsCloseHooks(html) {
 /* -------------------------------------------- */
 
 function onRenderTalentControls(app, html) {
-  if ( app.id !== "crucible-talent-controls" ) return;
+  // Inject region labels when the talent tree controls bar renders (normal play).
+  if ( app.id === "crucible-talent-controls" ) {
+    injectRegionLabels(game.system?.tree);
+    wireControlsCloseHooks(html);
 
-  wireControlsCloseHooks(html);
+    if ( getSearchButton(html) ) return;
 
-  if ( getSearchButton(html) ) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.classList.add("talent-search-toggle", "frame-brown");
+    btn.setAttribute("aria-pressed", "false");
+    btn.setAttribute("aria-label", game.i18n.localize("TALENT_SEARCH.ButtonLabel"));
+    btn.innerHTML = `<i class="fa-solid fa-magnifying-glass" inert></i>`
+      + `<label>${game.i18n.localize("TALENT_SEARCH.ButtonLabel")}</label>`;
 
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.classList.add("talent-search-toggle", "frame-brown");
-  btn.setAttribute("aria-pressed", "false");
-  btn.setAttribute("aria-label", game.i18n.localize("TALENT_SEARCH.ButtonLabel"));
-  btn.innerHTML = `<i class="fa-solid fa-magnifying-glass" inert></i>`
-    + `<label>${game.i18n.localize("TALENT_SEARCH.ButtonLabel")}</label>`;
+    btn.addEventListener("click", () => toggleSearch(btn));
 
-  btn.addEventListener("click", () => toggleSearch(btn));
+    if ( isSearchOpen() ) {
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+    }
 
-  if ( isSearchOpen() ) {
-    btn.classList.add("active");
-    btn.setAttribute("aria-pressed", "true");
+    const controlsDiv = html.querySelector(".controls");
+    if ( controlsDiv ) controlsDiv.prepend(btn);
+    else html.append(btn);
+    return;
   }
 
-  const controlsDiv = html.querySelector(".controls");
-  if ( controlsDiv ) controlsDiv.prepend(btn);
-  else html.append(btn);
+  // Inject region labels + search button when the hero creation sheet is on the talents step.
+  if ( app.id === "crucible-hero-creation" ) {
+    // The header re-renders on every tab change, so we must re-inject each time.
+    // Only show the button when the talents step is active.
+    if ( app.element.dataset.step !== "talents" ) return;
+
+    // Inject region labels — deferred one frame so activateTalentTree() has
+    // finished embedding the PIXI canvas before we add children to tree.background.
+    requestAnimationFrame(() => injectRegionLabels(game.system?.tree));
+
+    // Add a search button into .fullscreen-buttons alongside Restart / Close,
+    // matching the existing plain button style. Guard against double-injection.
+    const buttonsBar = app.element.querySelector(".fullscreen-buttons");
+    if ( !buttonsBar || buttonsBar.querySelector(".talent-search-toggle") ) return;
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.classList.add("talent-search-toggle", "fullscreen-button", "plain");
+    btn.setAttribute("aria-pressed", "false");
+    btn.setAttribute("aria-label", game.i18n.localize("TALENT_SEARCH.ButtonLabel"));
+    btn.innerHTML = `<i class="fa-solid fa-magnifying-glass" inert></i>`
+      + game.i18n.localize("TALENT_SEARCH.ButtonLabel");
+
+    btn.addEventListener("click", () => toggleSearch(btn));
+
+    if ( isSearchOpen() ) {
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+    }
+
+    // Insert before the first existing button so it sits at the top of the column.
+    buttonsBar.prepend(btn);
+    return;
+  }
 }
 
 /* -------------------------------------------- */
@@ -231,7 +270,10 @@ function registerEscapeKeybinding() {
   });
 }
 
-Hooks.once("init", registerEscapeKeybinding);
+Hooks.once("init", () => {
+  registerRegionLabelSettings();
+  registerEscapeKeybinding();
+});
 Hooks.on("renderApplicationV2",    onRenderTalentControls);
 Hooks.on("preCloseApplicationV2",  onPreCloseTalentControls);
 Hooks.on("closeApplicationV2",     onCloseSearchPanel);
