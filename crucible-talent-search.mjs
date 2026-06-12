@@ -231,7 +231,7 @@ function registerEscapeKeybinding() {
   });
 }
 
-Hooks.once("ready", registerEscapeKeybinding);
+Hooks.once("init", registerEscapeKeybinding);
 Hooks.on("renderApplicationV2",    onRenderTalentControls);
 Hooks.on("preCloseApplicationV2",  onPreCloseTalentControls);
 Hooks.on("closeApplicationV2",     onCloseSearchPanel);
