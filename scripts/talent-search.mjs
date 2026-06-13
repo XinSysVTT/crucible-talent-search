@@ -233,7 +233,7 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
           img: talent.img || "icons/svg/mystery-man.svg",
           tier: node.tier ?? 0,
           nodeId: node.id,
-          nodeType: node.typeLabel || node.type || "",
+          nodeType: SYSTEM.TALENT.NODE_TYPES[node.type]?.label || node.type || "",
           abilities,
           owned,
           accessible,
