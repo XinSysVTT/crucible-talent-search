@@ -88,6 +88,10 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
   /** The floating talent-info tooltip div rendered next to the search panel. */
   #tooltipEl = null;
 
+  /** Saved panel position so it survives re-renders. */
+  #dragLeft = null;
+  #dragBottom = null;
+
   /** Incremented each time a navigate is triggered; lets in-flight navigations detect they've been superseded. */
   #navigateSeq = 0;
 
@@ -220,6 +224,13 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
 
         // Normalise node.abilities to the ids used by SYSTEM.ABILITIES.
         // Crucible stores abilities as a Set; Object.keys(Set) is always [].
+		
+		const NODE_TYPE_LABELS = {
+		  origin: "Origin", attack: "Attack", melee: "Melee", ranged: "Ranged",
+		  magic: "Magic", defense: "Defense", heal: "Healing", spell: "Spellcraft",
+		  move: "Movement", utility: "Utility", skill: "Skill",
+		  signature: "Signature", training: "Training"
+		};
         const rawAbilities = this.#collectAbilityKeys(node.abilities);
         const abilities = rawAbilities.map(k => {
           const lk = k.toLowerCase();
@@ -233,7 +244,7 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
           img: talent.img || "icons/svg/mystery-man.svg",
           tier: node.tier ?? 0,
           nodeId: node.id,
-          nodeType: SYSTEM.TALENT.NODE_TYPES[node.type]?.label || node.type || "",
+          nodeType: NODE_TYPE_LABELS[node.type] || node.type,
           abilities,
           owned,
           accessible,
@@ -281,6 +292,10 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
   async _onRender(context, options) {
     await super._onRender(context, options);
     const el = this.element;
+
+    // Restore saved drag position after re-render
+    if ( this.#dragLeft !== null ) el.style.left   = this.#dragLeft;
+    if ( this.#dragBottom !== null ) el.style.bottom = this.#dragBottom;
 
     // After every render the DOM is replaced, so any stored reference to a
     // ".navigated" entry element is now stale. If the highlighted node is no
@@ -346,6 +361,37 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
     for ( const entry of el.querySelectorAll(".talent-search-entry[data-node-id]") ) {
       entry.addEventListener("pointerenter", this.#onEntryHover.bind(this));
       entry.addEventListener("pointerleave", this.#onEntryLeave.bind(this));
+    }
+
+    // Make the panel draggable by its header
+    const header = el.querySelector(".search-header");
+    if ( header ) {
+      header.style.cursor = "grab";
+      header.addEventListener("pointerdown", (e) => {
+        if ( e.target.closest(".close-btn") ) return;
+        e.preventDefault();
+        const startX = e.clientX;
+        const startY = e.clientY;
+        const rect = el.getBoundingClientRect();
+        const startLeft   = rect.left;
+        const startBottom = window.innerHeight - rect.bottom;
+        header.style.cursor = "grabbing";
+        const onMove = (e) => {
+          const left   = Math.max(0, startLeft   + (e.clientX - startX));
+          const bottom = Math.max(0, startBottom - (e.clientY - startY));
+          this.#dragLeft   = `${left}px`;
+          this.#dragBottom = `${bottom}px`;
+          el.style.left   = this.#dragLeft;
+          el.style.bottom = this.#dragBottom;
+        };
+        const onUp = () => {
+          header.style.cursor = "grab";
+          window.removeEventListener("pointermove", onMove);
+          window.removeEventListener("pointerup", onUp);
+        };
+        window.addEventListener("pointermove", onMove);
+        window.addEventListener("pointerup", onUp);
+      });
     }
   }
 
