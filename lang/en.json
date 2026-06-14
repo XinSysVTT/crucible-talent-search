@@ -23,5 +23,11 @@
   "TALENT_SEARCH.NODE_TYPES.utility": "Utility",
   "TALENT_SEARCH.NODE_TYPES.skill": "Skill",
   "TALENT_SEARCH.NODE_TYPES.signature": "Signature",
-  "TALENT_SEARCH.NODE_TYPES.training": "Training"
+  "TALENT_SEARCH.NODE_TYPES.training": "Training",
+  "TALENT_SEARCH.REGION.dexterity": "Dexterity",
+  "TALENT_SEARCH.REGION.toughness": "Toughness",
+  "TALENT_SEARCH.REGION.strength": "Strength",
+  "TALENT_SEARCH.REGION.wisdom": "Wisdom",
+  "TALENT_SEARCH.REGION.presence": "Presence",
+  "TALENT_SEARCH.REGION.intellect": "Intellect"
 }
