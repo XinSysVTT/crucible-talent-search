@@ -58,7 +58,7 @@
         <div class="entry-details">
           <div class="entry-name">{{this.name}}</div>
           <div class="entry-meta">
-            <span class="entry-tier">T{{this.tier}}</span>
+            <span class="entry-tier">{{localize "TALENT_SEARCH.TierAbbr" n=this.tier}}</span>
             {{#if this.nodeType}}<span class="entry-type">{{this.nodeType}}</span>{{/if}}
           </div>
         </div>
