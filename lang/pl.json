@@ -10,5 +10,18 @@
   "TALENT_SEARCH.Talents": "talenty",
   "TALENT_SEARCH.Owned": "Posiadane",
   "TALENT_SEARCH.NavigateTo": "Nawiguj do",
-  "TALENT_SEARCH.NoResults": "Nie znaleziono żadnych talentów"
+  "TALENT_SEARCH.NoResults": "Nie znaleziono żadnych talentów",
+  "TALENT_SEARCH.NODE_TYPES.origin": "Pochodzenie",
+  "TALENT_SEARCH.NODE_TYPES.attack": "Atak",
+  "TALENT_SEARCH.NODE_TYPES.melee": "Walka wręcz",
+  "TALENT_SEARCH.NODE_TYPES.ranged": "Walka dystansowa",
+  "TALENT_SEARCH.NODE_TYPES.magic": "Magia",
+  "TALENT_SEARCH.NODE_TYPES.defense": "Obrona",
+  "TALENT_SEARCH.NODE_TYPES.heal": "Leczenie",
+  "TALENT_SEARCH.NODE_TYPES.spell": "Zaklinanie",
+  "TALENT_SEARCH.NODE_TYPES.move": "Ruch",
+  "TALENT_SEARCH.NODE_TYPES.utility": "Użytkowe",
+  "TALENT_SEARCH.NODE_TYPES.skill": "Umiejętność",
+  "TALENT_SEARCH.NODE_TYPES.signature": "Sygnaturowe",
+  "TALENT_SEARCH.NODE_TYPES.training": "Trening"
 }

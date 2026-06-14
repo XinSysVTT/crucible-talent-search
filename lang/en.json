@@ -10,5 +10,18 @@
   "TALENT_SEARCH.Talents": "talents",
   "TALENT_SEARCH.Owned": "Owned",
   "TALENT_SEARCH.NavigateTo": "Navigate to",
-  "TALENT_SEARCH.NoResults": "No talents found"
+  "TALENT_SEARCH.NoResults": "No talents found",
+  "TALENT_SEARCH.NODE_TYPES.origin": "Origin",
+  "TALENT_SEARCH.NODE_TYPES.attack": "Attack",
+  "TALENT_SEARCH.NODE_TYPES.melee": "Melee",
+  "TALENT_SEARCH.NODE_TYPES.ranged": "Ranged",
+  "TALENT_SEARCH.NODE_TYPES.magic": "Magic",
+  "TALENT_SEARCH.NODE_TYPES.defense": "Defense",
+  "TALENT_SEARCH.NODE_TYPES.heal": "Healing",
+  "TALENT_SEARCH.NODE_TYPES.spell": "Spellcraft",
+  "TALENT_SEARCH.NODE_TYPES.move": "Movement",
+  "TALENT_SEARCH.NODE_TYPES.utility": "Utility",
+  "TALENT_SEARCH.NODE_TYPES.skill": "Skill",
+  "TALENT_SEARCH.NODE_TYPES.signature": "Signature",
+  "TALENT_SEARCH.NODE_TYPES.training": "Training"
 }

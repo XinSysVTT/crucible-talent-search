@@ -225,12 +225,15 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
         // Normalise node.abilities to the ids used by SYSTEM.ABILITIES.
         // Crucible stores abilities as a Set; Object.keys(Set) is always [].
 		
-		const NODE_TYPE_LABELS = {
-		  origin: "Origin", attack: "Attack", melee: "Melee", ranged: "Ranged",
-		  magic: "Magic", defense: "Defense", heal: "Healing", spell: "Spellcraft",
-		  move: "Movement", utility: "Utility", skill: "Skill",
-		  signature: "Signature", training: "Training"
-		};
+		const NODE_TYPE_LABEL_KEYS = {
+  origin: "TALENT_SEARCH.NODE_TYPES.origin", attack: "TALENT_SEARCH.NODE_TYPES.attack",
+  melee: "TALENT_SEARCH.NODE_TYPES.melee", ranged: "TALENT_SEARCH.NODE_TYPES.ranged",
+  magic: "TALENT_SEARCH.NODE_TYPES.magic", defense: "TALENT_SEARCH.NODE_TYPES.defense",
+  heal: "TALENT_SEARCH.NODE_TYPES.heal", spell: "TALENT_SEARCH.NODE_TYPES.spell",
+  move: "TALENT_SEARCH.NODE_TYPES.move", utility: "TALENT_SEARCH.NODE_TYPES.utility",
+  skill: "TALENT_SEARCH.NODE_TYPES.skill", signature: "TALENT_SEARCH.NODE_TYPES.signature",
+  training: "TALENT_SEARCH.NODE_TYPES.training"
+};
         const rawAbilities = this.#collectAbilityKeys(node.abilities);
         const abilities = rawAbilities.map(k => {
           const lk = k.toLowerCase();
@@ -244,7 +247,7 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
           img: talent.img || "icons/svg/mystery-man.svg",
           tier: node.tier ?? 0,
           nodeId: node.id,
-          nodeType: NODE_TYPE_LABELS[node.type] || node.type,
+          nodeType: game.i18n.localize(NODE_TYPE_LABEL_KEYS[node.type] ?? node.type),
           abilities,
           owned,
           accessible,
@@ -312,6 +315,11 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
       // the canvas highlight remains until the user clicks elsewhere, which is fine.
     }
 
+    if ( this.#hoveredIcon ) {
+      this.#glowOff(this.#hoveredIcon.node?.id);
+    }
+    this.#hideTooltip();
+
     // Live text search.
     // Capture the value synchronously then debounce only the render call.
     // If the entire callback is debounced, event.target is gone (re-rendered)
@@ -362,6 +370,12 @@ export default class CrucibleTalentSearch extends HandlebarsApplicationMixin(App
       entry.addEventListener("pointerenter", this.#onEntryHover.bind(this));
       entry.addEventListener("pointerleave", this.#onEntryLeave.bind(this));
     }
+
+    el.querySelector(".search-results")?.addEventListener("scroll", () => {
+      this.#hideTooltip();
+      if ( this.#hoveredIcon ) {
+        this.#glowOff(this.#hoveredIcon.node?.id);
+    }}, { passive: true });
 
     // Make the panel draggable by its header
     const header = el.querySelector(".search-header");
