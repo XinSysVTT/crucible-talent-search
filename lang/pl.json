@@ -29,5 +29,6 @@
   "TALENT_SEARCH.REGION.strength": "Siła",
   "TALENT_SEARCH.REGION.wisdom": "Mądrość",
   "TALENT_SEARCH.REGION.presence": "Charyzma",
-  "TALENT_SEARCH.REGION.intellect": "Intelekt"
+  "TALENT_SEARCH.REGION.intellect": "Intelekt",
+  "TALENT_SEARCH.TierAbbr": "T{n}"
 }
