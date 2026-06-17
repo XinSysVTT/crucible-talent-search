@@ -30,5 +30,13 @@
   "TALENT_SEARCH.REGION.wisdom": "Wisdom",
   "TALENT_SEARCH.REGION.presence": "Presence",
   "TALENT_SEARCH.REGION.intellect": "Intellect",
-  "TALENT_SEARCH.TierAbbr": "T{n}"
+  "TALENT_SEARCH.TierAbbr": "T{n}",
+  "TALENT_SEARCH.SETTINGS.showRegionLabels.name": "Region Labels",
+  "TALENT_SEARCH.SETTINGS.showRegionLabels.hint": "The six ability sextants in the talent tree will be labeled with large, semi-transparent text showing the name of each region. This is intended as a visual aid to help orient yourself when navigating the tree, and is not meant to be decorative. If you find it distracting, you can disable it here.",
+  "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.name": "Region Labels Opacity",
+  "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.hint": "The opacity of the region labels in the talent tree.",
+  "TALENT_SEARCH.SETTINGS.regionLabelsSize.name": "Region Labels Size",
+  "TALENT_SEARCH.SETTINGS.regionLabelsSize.hint": "The size of the region labels in the talent tree.",
+  "TALENT_SEARCH.SETTINGS.regionLabelsRadius.name": "Region Labels Radius",
+  "TALENT_SEARCH.SETTINGS.regionLabelsRadius.hint": "The radial distance from the centre of the talent tree for the region labels."
 }

@@ -52,8 +52,8 @@ let _container = null;
 export function registerRegionLabelSettings() {
 
   game.settings.register("crucible-talent-search", "showRegionLabels", {
-    name: "Region Labels",
-    hint: "The six ability sextants in the talent tree will be labeled with large, semi-transparent text showing the name of each region.  This is intended as a visual aid to help orient yourself when navigating the tree, and is not meant to be decorative.  If you find it distracting, you can disable it here.",
+    name: "TALENT_SEARCH.SETTINGS.showRegionLabels.name",
+    hint: "TALENT_SEARCH.SETTINGS.showRegionLabels.hint",
     scope: "client",
     config: true,
     type: Boolean,
@@ -64,8 +64,8 @@ export function registerRegionLabelSettings() {
   });
 
   game.settings.register("crucible-talent-search", "regionLabelsOpacity", {
-    name: "Region Labels Opacity",
-    hint: "The opacity of the region labels in the talent tree.",
+    name: "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.name",
+    hint: "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.hint",
     scope: "client",
     config: true,
     type: Number,
@@ -83,8 +83,8 @@ export function registerRegionLabelSettings() {
   });
 
   game.settings.register("crucible-talent-search", "regionLabelsSize", {
-    name: "Region Labels Size",
-    hint: "The size of the region labels in the talent tree.",
+    name: "TALENT_SEARCH.SETTINGS.regionLabelsSize.name",
+    hint: "TALENT_SEARCH.SETTINGS.regionLabelsSize.hint",
     scope: "client",
     config: true,
     type: Number,
@@ -101,8 +101,8 @@ export function registerRegionLabelSettings() {
   });
 
   game.settings.register("crucible-talent-search", "regionLabelsRadius", {
-    name: "Region Labels Radius",
-    hint: "The radial distance from the centre of the talent tree for the region labels.",
+    name: "TALENT_SEARCH.SETTINGS.regionLabelsRadius.name",
+    hint: "TALENT_SEARCH.SETTINGS.regionLabelsRadius.hint ",
     scope: "client",
     config: true,
     type: Number,
