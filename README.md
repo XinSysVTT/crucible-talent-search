@@ -13,6 +13,12 @@ A Foundry VTT module for the **Crucible** system that adds a powerful searchable
 - 🌍 Localization support (English and Polish)
 - 🎨 Integrated UI that matches the Crucible Talent Tree
 
+<img width="355" height="631" alt="Talent browser" src="https://github.com/user-attachments/assets/487995cc-fa49-404e-958a-7a14f34bbd20" />
+
+### Also addtional feature (clearly marked attributes in talent tree) 
+<img width="984" height="806" alt="full talent tree" src="https://github.com/user-attachments/assets/27925681-4781-46a2-8db2-be1283b4e233" />
+
+
 ## Requirements
 
 - Foundry VTT v14.361 or newer
