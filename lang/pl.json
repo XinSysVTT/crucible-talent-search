@@ -31,12 +31,12 @@
   "TALENT_SEARCH.REGION.presence": "Prezencja",
   "TALENT_SEARCH.REGION.intellect": "Intelekt",
   "TALENT_SEARCH.TierAbbr": "S {n}",
-  "TALENT_SEARCH.SETTINGS.showRegionLabels.name": "Etykiety Regionów",
-  "TALENT_SEARCH.SETTINGS.showRegionLabels.hint": "Sześć sektorów zdolności w drzewie talentów zostanie oznaczonych dużym, półprzezroczystym tekstem pokazującym nazwę każdego regionu. Ma to służyć jako pomoc wizualna ułatwiająca orientację w drzewie i nie jest elementem dekoracyjnym. Jeśli uważasz to za rozpraszające, możesz to tutaj wyłączyć.",
-  "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.name": "Przezroczystość Etykiet Regionów",
-  "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.hint": "Przezroczystość etykiet regionów w drzewie talentów.",
-  "TALENT_SEARCH.SETTINGS.regionLabelsSize.name": "Rozmiar Etykiet Regionów",
-  "TALENT_SEARCH.SETTINGS.regionLabelsSize.hint": "Rozmiar etykiet regionów w drzewie talentów.",
-  "TALENT_SEARCH.SETTINGS.regionLabelsRadius.name": "Promień Etykiet Regionów",
-  "TALENT_SEARCH.SETTINGS.regionLabelsRadius.hint": "Odległość radialna od centrum drzewa talentów dla etykiet regionów."
+  "TALENT_SEARCH.SETTINGS.showRegionLabels.name": "Etykiety regionów",
+  "TALENT_SEARCH.SETTINGS.showRegionLabels.hint": "Sześć sekstantów umiejętności w drzewku talentów zostanie oznaczonych dużym, półprzezroczystym tekstem przedstawiającym nazwę każdego regionu. Ma to służyć jako wsparcie wizualne ułatwiające orientację podczas poruszania się po drzewku i nie pełni funkcji dekoracyjnej. Jeśli uznasz, że to cię rozprasza, możesz wyłączyć tę opcję tutaj.",
+  "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.name": "Przezroczystość etykiet regionów",
+  "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.hint": "Przezroczystość etykiet regionów w drzewku talentów.",
+  "TALENT_SEARCH.SETTINGS.regionLabelsSize.name": "Rozmiar etykiet regionów",
+  "TALENT_SEARCH.SETTINGS.regionLabelsSize.hint": "Rozmiar etykiet regionów w drzewku talentów.",
+  "TALENT_SEARCH.SETTINGS.regionLabelsRadius.name": "Promień etykiet regionów",
+  "TALENT_SEARCH.SETTINGS.regionLabelsRadius.hint": "Odległość od środka drzewka talentów dla etykiet regionów."
 }
