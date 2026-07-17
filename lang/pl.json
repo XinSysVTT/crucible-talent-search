@@ -32,7 +32,7 @@
   "TALENT_SEARCH.REGION.intellect": "Intelekt",
   "TALENT_SEARCH.TierAbbr": "S {n}",
   "TALENT_SEARCH.SETTINGS.showRegionLabels.name": "Etykiety regionów",
-  "TALENT_SEARCH.SETTINGS.showRegionLabels.hint": "Sześć sekstantów umiejętności w drzewku talentów zostanie oznaczonych dużym, półprzezroczystym tekstem przedstawiającym nazwę każdego regionu. Ma to służyć jako wsparcie wizualne ułatwiające orientację podczas poruszania się po drzewku i nie pełni funkcji dekoracyjnej. Jeśli uznasz, że to cię rozprasza, możesz wyłączyć tę opcję tutaj.",
+  "TALENT_SEARCH.SETTINGS.showRegionLabels.hint": "Sześć sektorów zdolności w drzewku talentów zostanie oznaczonych dużym, półprzezroczystym tekstem przedstawiającym nazwę każdego regionu. Ma to służyć jako wsparcie wizualne ułatwiające orientację podczas poruszania się po drzewku i nie pełni funkcji dekoracyjnej. Jeśli uznasz, że to cię rozprasza, możesz wyłączyć tę opcję tutaj.",
   "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.name": "Przezroczystość etykiet regionów",
   "TALENT_SEARCH.SETTINGS.regionLabelsOpacity.hint": "Przezroczystość etykiet regionów w drzewku talentów.",
   "TALENT_SEARCH.SETTINGS.regionLabelsSize.name": "Rozmiar etykiet regionów",
