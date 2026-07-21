@@ -1,3 +1,25 @@
+---
+
+<div align="center">
+
+<h3>☕ Support the Project</h3>
+
+<p>If you want to support this project, you can do so here.</p>
+
+<p><sub>Every coffee helps keep the project maintained and motivates future updates!</sub></p>
+
+<a href="https://buymeacoffee.com/xinsys">
+  <img
+    src="https://github.com/user-attachments/assets/5c4ef9f4-f6a3-457e-a8d4-34399d545f11"
+    alt="Buy Me a Coffee"
+    width="180"
+  />
+</a>
+
+</div>
+
+---
+
 # Crucible Talent Search
 
 A Foundry VTT module for the **Crucible** system that adds a powerful searchable talent browser to the Talent Tree interface.
